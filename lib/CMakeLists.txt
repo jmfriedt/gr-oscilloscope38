@@ -30,6 +30,8 @@ list(APPEND oscilloscope_sources
     vxi11/library/vxi11_xdr.c
 )
 
+find_package(libtirpc REQUIRED)
+
 set(oscilloscope_sources "${oscilloscope_sources}" PARENT_SCOPE)
 if(NOT oscilloscope_sources)
     MESSAGE(STATUS "No C++ sources... skipping lib/")
@@ -37,7 +39,10 @@ if(NOT oscilloscope_sources)
 endif(NOT oscilloscope_sources)
 
 add_library(gnuradio-oscilloscope SHARED ${oscilloscope_sources})
-target_link_libraries(gnuradio-oscilloscope gnuradio::gnuradio-runtime)
+target_link_libraries(gnuradio-oscilloscope PUBLIC
+               gnuradio::gnuradio-runtime
+               TIRPC::TIRPC)
+
 target_include_directories(gnuradio-oscilloscope
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
     PUBLIC $<INSTALL_INTERFACE:include>
