@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<block>
+  <name>oscilloscope</name>
+  <key>oscilloscope_oscilloscope</key>
+  <category>[oscilloscope]</category>
+  <import>import oscilloscope</import>
+  <make>oscilloscope.oscilloscope($ip,$range,$rate,$duration,$channels)</make>
+  <callback>set_range($range)</callback>
+  <callback>set_rate($rate)</callback>
+  <callback>set_duration($duration)</callback>
+  <callback>set_ip($ip)</callback>
+  <callback>set_channels($channels)</callback>
+
+  <param>
+    <name>IP</name>
+    <key>ip</key>
+    <type>string</type>
+  </param>
+
+  <param>
+    <name>Range</name>
+    <key>range</key>
+    <type>real</type>
+  </param>
+
+  <param>
+    <name>Rate</name>
+    <key>rate</key>
+    <type>real</type>
+  </param>
+
+  <param>
+    <name>Duration</name>
+    <key>duration</key>
+    <type>real</type>
+  </param>
+  <param>
+    <name>Channels</name>
+    <key>channels</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
+  <check>0 &lt; $channels</check>
+  <source>
+    <name>out</name>
+    <type>float</type>
+    <nports>$channels</nports>
+  </source>
+</block>
