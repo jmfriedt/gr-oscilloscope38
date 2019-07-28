@@ -1,7 +1,9 @@
 # gr-oscilloscope38
 Using an oscilloscope as Software Defined Radio source for GNU Radio 3.8
 
-Assumes the availability of RPC for communication over VXI11 with an oscilloscope.
+Assumes the availability of RPC for communication over VXI11 with an oscilloscope, provided 
+by `apt-get install libtirpc-dev` on Debian/GNU Linux.
+
 Tested on Rohde & Schwarz RTO2034 and RTE1054, will most probably work on any RT series
 oscilloscopes. Origianlly developed for the Agilent 54855DSO but not tested after
 adding support for R&S instruments. Select which brand is used with the #define flags
