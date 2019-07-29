@@ -320,7 +320,9 @@ void oscilloscope_impl::set_range(float range)
 #endif
 #ifdef rohdeschwarz
     sprintf(buffer,"CHAN1:SCAL %f\n",range);envoi(dev,buffer); // RANG is not working ?!
-    sprintf(buffer,"CHAN2:SCAL %f\n",range);envoi(dev,buffer);
+    if (_channels>=2) sprintf(buffer,"CHAN2:SCAL %f\n",range);envoi(dev,buffer);
+    if (_channels>=3) sprintf(buffer,"CHAN3:SCAL %f\n",range);envoi(dev,buffer);
+    if (_channels>=4) sprintf(buffer,"CHAN4:SCAL %f\n",range);envoi(dev,buffer);
 #endif
    }
  _range=range;
