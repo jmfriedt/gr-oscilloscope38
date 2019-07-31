@@ -24,9 +24,5 @@ Noise measurement for Time Delay measurement by correlating the channels:
 <img src="examples/RTE1054noise2.png" alt="gr-oscilloscope screenshot with noise source" width=600>
 <img src="examples/DSC00477.JPG" alt="experimental setup" width=600>
 
-[1] Weike Feng, Jean-Michel Friedt, Grigory Cherniak, and Motoyuki Sato
-
-Passive bistatic radar using digital video broadcasting–terrestrial receivers as general-purpose software-defined radio receivers
-
-Review of Scientific Instruments 89, 104701 (2018); https://doi.org/10.1063/1.5048132 available at
+[1] Weike Feng, Jean-Michel Friedt, Grigory Cherniak, and Motoyuki Sato, <li>Passive bistatic radar using digital video broadcasting–terrestrial receivers as general-purpose software-defined radio receivers</li>, Review of Scientific Instruments <B>89</B>, 104701 (2018); https://doi.org/10.1063/1.5048132 available at
 http://jmfriedt.free.fr/dvbt_hardware.pdf
