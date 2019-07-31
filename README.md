@@ -14,4 +14,12 @@ dummy data (sine waves) is available in examples. Compile manually (`gcc -o tcp_
 tcp_server.c -lm`) and execute (`./examples/tcp_server`) to connect the server to port 9999 of
 the localhost. TCP/IP dummy data communication is activated by selecting as IP address
 of the gr-oscilloscope "oscilloscope" block 127.0.0.1.
+
+Dummy TCP signal source to check the block is operational:
+
 <img src="examples/gnuradio3p8tcpoutput.png" alt="gr-oscilloscope screenshot with dummy source" width=600>
+
+Noise measurement for Time Delay measurement by correlating the channels:
+
+<img src="examples/RTE1054noise2.png" alt="gr-oscilloscope screenshot with noise source" width=600>
+<img src="examples/DSC00477.JPG" alt="experimental setup" width=200>
