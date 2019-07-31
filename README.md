@@ -22,4 +22,4 @@ Dummy TCP signal source to check the block is operational:
 Noise measurement for Time Delay measurement by correlating the channels:
 
 <img src="examples/RTE1054noise2.png" alt="gr-oscilloscope screenshot with noise source" width=600>
-<img src="examples/DSC00477.JPG" alt="experimental setup" width=200>
+<img src="examples/DSC00477.JPG" alt="experimental setup" width=600>
