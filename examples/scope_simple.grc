@@ -60,7 +60,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: rate*duration
+    value: 5e9
   states:
     bus_sink: false
     bus_source: false
@@ -83,7 +83,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 180.0]
+    coordinate: [464, 276.0]
     rotation: 0
     state: disabled
 - name: blocks_float_to_complex_0
@@ -99,7 +99,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [312, 192.0]
+    coordinate: [288, 280.0]
     rotation: 0
     state: disabled
 - name: blocks_throttle_0
@@ -118,7 +118,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [216, 92.0]
+    coordinate: [200, 140.0]
     rotation: 0
     state: enabled
 - name: oscilloscope_oscilloscope_0
@@ -126,7 +126,7 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    channels: '2'
+    channels: '4'
     comment: '169.254.78.105
 
       169.254.91.148 R&S RTO2034
@@ -135,14 +135,14 @@ blocks:
     ip: 192.168.1.43
     maxoutbuf: '0'
     minoutbuf: '0'
-    myduration: 1e-3
-    myrate: 4e5
-    range: '.00004'
+    myduration: duration
+    myrate: rate*2
+    range: '0.1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [40, 148.0]
+    coordinate: [40, 144.0]
     rotation: 0
     state: enabled
 - name: qtgui_time_sink_x_0_0
@@ -199,7 +199,7 @@ blocks:
     marker8: '-1'
     marker9: '-1'
     name: '""'
-    nconnections: '2'
+    nconnections: '4'
     size: int(rate*duration)
     srate: samp_rate
     stemplot: 'False'
@@ -239,7 +239,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [392, 92.0]
+    coordinate: [352, 144.0]
     rotation: 0
     state: enabled
 
@@ -250,6 +250,8 @@ connections:
 - [oscilloscope_oscilloscope_0, '0', blocks_throttle_0, '0']
 - [oscilloscope_oscilloscope_0, '1', blocks_float_to_complex_0, '1']
 - [oscilloscope_oscilloscope_0, '1', qtgui_time_sink_x_0_0, '1']
+- [oscilloscope_oscilloscope_0, '2', qtgui_time_sink_x_0_0, '2']
+- [oscilloscope_oscilloscope_0, '3', qtgui_time_sink_x_0_0, '3']
 
 metadata:
   file_format: 1

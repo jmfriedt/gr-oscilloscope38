@@ -19,7 +19,7 @@
  */
 
 //#define VXI11
-#define mydebug
+//#define mydebug
 #define rohdeschwarz
 
 #ifdef HAVE_CONFIG_H
@@ -166,10 +166,15 @@ namespace gr {
      char mystring[256];
      char buffer[256];
      
+#ifdef mydebug
      printf("channels: %d\n",output_items.size()); // contient le nombre de canaux
+#endif
 //#ifdef VXI11
      if (_num_values==0) // not enough data left in buffer -- reload
-       {printf("collecting new data: %d\n",_sample_size);
+       {
+#ifdef mydebug
+        printf("collecting new data: %d\n",_sample_size);
+#endif
         _num_values=_sample_size;
         _position=0;
         if (_vxi11==1)
@@ -257,7 +262,10 @@ namespace gr {
         _position++;
        }
      if (_num_values==0) 
-        {printf("_num_values==0\n");fflush(stdout);
+        {
+#ifdef mydebug
+         printf("_num_values==0\n");fflush(stdout);
+#endif
          return(k); // only return what was left in the buffer
         }
       // Tell runtime system how many output items we produced.
