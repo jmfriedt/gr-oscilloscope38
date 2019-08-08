@@ -32,11 +32,61 @@ options:
     state: enabled
 
 blocks:
+- name: myrange
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    label0: 2mV
+    label1: 1V
+    label2: 5V
+    label3: ''
+    label4: ''
+    labels: '[]'
+    num_opts: '3'
+    option1: '1.0'
+    option2: '5.0'
+    option3: '3'
+    option4: '4'
+    options: '[0, 1, 2]'
+    orient: Qt.QVBoxLayout
+    type: real
+    value: 2E-3
+    widget: combo_box
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [136, 220.0]
+    rotation: 0
+    state: true
+- name: myrate
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: 500e3
+    step: 1e5
+    stop: 5e9
+    value: 500e3
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 220.0]
+    rotation: 0
+    state: true
 - name: samp_rate
   id: variable
   parameters:
     comment: ''
-    value: '32000'
+    value: 32000/4
   states:
     bus_sink: false
     bus_source: false
@@ -73,9 +123,9 @@ blocks:
     ip: 127.0.0.1
     maxoutbuf: '0'
     minoutbuf: '0'
-    myduration: '.0001'
-    myrange: '2'
-    myrate: 5e5
+    myduration: '.0002'
+    myrange: myrange
+    myrate: myrate
   states:
     bus_sink: false
     bus_source: false
