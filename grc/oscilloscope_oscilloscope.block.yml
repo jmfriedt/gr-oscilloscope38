@@ -1,14 +1,12 @@
 id: oscilloscope_oscilloscope
 label: oscilloscope
 category: '[Oscilloscope]'
-templates:
-  imports: import oscilloscope
-  make: oscilloscope.oscilloscope(${ip}, ${range}, ${myrate}, ${myduration}, ${channels})
+
 parameters:
 - id: ip
   label: Ip
   dtype: string
-- id: range
+- id: myrange
   label: Range
   dtype: float
 - id: myrate
@@ -25,4 +23,15 @@ outputs:
   domain: stream
   dtype: float
   multiplicity: ${channels}
+
+templates:
+  imports: import oscilloscope
+  make: oscilloscope.oscilloscope(${ip}, ${myrange}, ${myrate}, ${myduration}, ${channels})
+  callbacks:
+  - set_rate(${myrate})
+  - set_range(${myrange})
+  - set_duration(${myduration})
+#  - set_ip(${ip})
+#  - set_channels(${channels})
+
 file_format: 1

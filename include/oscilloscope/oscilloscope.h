@@ -46,6 +46,11 @@ namespace gr {
        * creating new instances.
        */
       static sptr make(std::string ip, float range, float rate, float duration, int channels);
+      virtual void set_range(float) = 0;
+      virtual void set_rate(float) = 0;
+      virtual void set_duration(float) = 0;
+//      virtual void set_ip(std::string);
+//      virtual void set_channels(int);
     };
 
   } // namespace oscilloscope

@@ -288,6 +288,7 @@ void oscilloscope_impl::set_ip(std::string varip)
 
 void oscilloscope_impl::set_duration(float duration)
 {char buffer[256];
+ printf("new duration: %f\n",duration);fflush(stdout);
  if (_vxi11==1)
     {_sample_size = (int)(duration * _rate);
 #ifdef agilent
@@ -313,7 +314,6 @@ void oscilloscope_impl::set_duration(float duration)
  _tab2=(float*)malloc(_sample_size*sizeof(float));
  _tab3=(float*)malloc(_sample_size*sizeof(float));
  _tab4=(float*)malloc(_sample_size*sizeof(float));
- printf("new duration: %f\n",duration);fflush(stdout);
  _duration=duration;
 }
 
@@ -343,6 +343,7 @@ void oscilloscope_impl::set_channels(int channels)
 
 void oscilloscope_impl::set_rate(float rate)
 {char buffer[256];
+ printf("new rate: %f\n",rate);fflush(stdout);
  if (_vxi11==1)
     {_sample_size = (int)(_duration * rate);
 #ifdef agilent
@@ -370,8 +371,8 @@ void oscilloscope_impl::set_rate(float rate)
  _tab2=(float*)malloc(_sample_size*sizeof(float));
  _tab3=(float*)malloc(_sample_size*sizeof(float));
  _tab4=(float*)malloc(_sample_size*sizeof(float));
- printf("new rate: %f\n",rate);fflush(stdout);
  _rate=rate;
 }
+
   } /* namespace oscilloscope */
 } /* namespace gr */

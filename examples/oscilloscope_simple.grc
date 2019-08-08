@@ -74,8 +74,8 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     myduration: '.0001'
+    myrange: '2'
     myrate: 5e5
-    range: '0.5'
   states:
     bus_sink: false
     bus_source: false
@@ -177,7 +177,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 112.0]
+    coordinate: [376, 88.0]
     rotation: 0
     state: true
 

@@ -59,20 +59,21 @@ namespace gr {
        char _vxi11;    // select TCP/IP server if @==127.0.0.1, VXI11 otherwise
 
      public:
-      void set_range(float);
-      void set_rate(float);
-      void set_duration(float);
       void set_ip(std::string);
       void set_channels(int);
       oscilloscope_impl(std::string,float,float,float,int);
       ~oscilloscope_impl();
 
       // Where all the action really happens
+      void set_rate(float );
+      void set_range(float);
+      void set_duration(float);
+
       int work(int noutput_items,
          gr_vector_const_void_star &input_items,
          gr_vector_void_star &output_items);
-    };
 
+    };
   } // namespace oscilloscope
 } // namespace gr
 
