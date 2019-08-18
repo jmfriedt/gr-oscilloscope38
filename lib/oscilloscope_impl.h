@@ -49,7 +49,7 @@ namespace gr {
        int longueur,result;
 // #endif
        float _range,_duration,_rate;
-       float *_tab1,*_tab2,*_tab3,*_tab4;
+       float *_tab1=NULL,*_tab2=NULL,*_tab3=NULL,*_tab4=NULL;
        int _sample_size;
        char device_ip[16]; // IP @
        char *_data_buffer=NULL;
